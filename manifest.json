@@ -5,9 +5,10 @@
     "manifest_version": 2,
     "description": "Makes eClass more useable",
     "icons": {"128": "images/favicon.png"},
-    "permissions": ["activeTab"],
+    "permissions": ["activeTab", "storage"],
     "browser_action": {
         "default_icon": "images/favicon.png",
+        "default_popup": "popup.html",
         "default_title": "eClass Optimizations"
     },
     "content_scripts": [ 

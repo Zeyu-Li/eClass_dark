@@ -16,23 +16,24 @@ let rule
 if (dark_mode) {
     // dark mode
     rule = `
-    h1, h2, h3, h4, h5, p, li{
-        color: #D6D8DA;
+    h1, h2, h3, h4, h5, p, li, .header-button-title, .anonforumnodiscuss, pre {
+        color: #D6D8DA; // white-gray
     }
-    .breadcrumb-item {
-        
-        color: #D6D8DA!important;
+    .breadcrumb-item, .mb-3, .no-overflow, .groupselector, .author, .author-info, .discussion span, table {
+        color: #D6D8DA!important; // white-gray
     }
 
     body {
-        background-color: #242424!important;
+        background-color: #242424!important; // dark-gray
     }
     .card {
-        background-color: #303030;
         margin-bottom: 0px!important;
     }
-    #region-main {
-        background-color: #303030;
+    #region-main, .card {
+        background-color: #303030; // light-gray
+    }
+    .info {
+        background-color: #303030!important; // light-gray
     }
     a {
         color: #0ec76f;
@@ -46,19 +47,35 @@ if (dark_mode) {
         color: #28e089;
         transition: .5s;
     }
-    .no-overflow span {
+    .no-overflow span, .forumpost.unread .row.header {
         background-color: rgba(255, 207, 53, .4)!important
     }
     .breadcrumb .breadcrumb-item a:hover {
         color: #28e089;
         transition: .5s;
     }
-    .forumnodiscuss {
+    .forumnodiscuss, .anonforumnodiscuss {
         margin-bottom: 10px!important;
         
     }
     .welcome_area {
         color: #D6D8DA!important;
+    }
+    .node_category, .profile_tree section {
+        background-color: #303030!important;
+
+    }
+    .content li {
+        color: #284E36
+    }
+    .popover-region-container, .notification {
+        background-color: #303030; // light-gray
+    }
+    .unread {
+        background-color: #575757!important; // lighter-gray
+    }
+    .mediaplugin > div {
+        max-width: 100%!important;
     }
     `
 } else {
@@ -66,9 +83,15 @@ if (dark_mode) {
     rule = `
     a {
         color: #007c41;
+        transition: .5s;
     }
     a:visited {
         color: #00361b;
+        transition: .5s;
+    }
+    a:hover {
+        color: #28e089;
+        transition: .5s;
     }
     `
 }
@@ -79,14 +102,18 @@ cssInjector(rule)
 
 function newTabs() {
     let links = document.querySelectorAll('.activityinstance a')
-    console.log(links)
     links.forEach(element => {
         element.target = "_blank"
     })
-
 }
 
 newTabs()
+
+function videoSpeed() {
+    document.querySelector('video').playbackRate = 2
+}
+
+videoSpeed()
 
 // old
 
