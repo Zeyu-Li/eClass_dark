@@ -15,7 +15,7 @@ To install this extension
 
 1. clone this GitHub repo or download zip
 
-   ![download](images/download.png)
+   <img src="images/download.png" alt="download" style="zoom:50%;" />
 
 2. Unzip download (don't need to unzip if cloned)
 
