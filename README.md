@@ -6,6 +6,19 @@ This Chrome extension will make eClass, a UofA class course website, thematicall
 * Video speed controls
 * More visible text
 * See what links have been visited
+* Bigger Videos
+
+
+
+## Preview
+
+![preview1](images/preview1.png)
+
+
+
+The links in lighter green show what has not been clicked
+
+![preview2](images/preview2.png)
 
 
 
@@ -28,4 +41,16 @@ To install this extension
 
 
 Now you have the extension installed!! 🤩
+
+
+
+## License
+
+MIT
+
+
+
+## Bugs
+
+If there are bugs, use the issues tab on GitHub (https://github.com/Zeyu-Li/eClass_dark/issues)
 
