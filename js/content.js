@@ -119,12 +119,15 @@ newTabs()
 
 // vid speed
 chrome.storage.sync.get('vid_speed', function(result) {
-    let speed = result.vid_speed.vid_speed
-    if (speed == undefined) {
+    let speed
+    if (Object.keys(result).length === 0 && result.constructor === Object) {
         speed = 2
+        chrome.storage.sync.set({'vid_speed': speed})
+        console.log(speed)
+    } else {
+        speed = result.vid_speed
+        console.log(speed)
     }
-    chrome.storage.sync.set({'vid_speed': speed})
-    console.log(speed)
     change_speed(speed)
 })
 
