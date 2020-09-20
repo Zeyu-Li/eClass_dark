@@ -1,14 +1,17 @@
-let one = document.getElementById('x1')
-let one5 = document.getElementById('x15')
-let two = document.getElementById('x2')
 
-one.addEventListener('click', event => {
+// for each of the speed settings
+let _1 = document.getElementById('x1')
+let _15 = document.getElementById('x15')
+let _2 = document.getElementById('x2')
+
+// send the right msg to content.js
+_1.addEventListener('click', event => {
     send_msg(1)
 })
-one5.addEventListener('click', event => {
+_15.addEventListener('click', event => {
     send_msg(1.5)
 })
-two.addEventListener('click', event => {
+_2.addEventListener('click', event => {
     send_msg(2)
 })
 
