@@ -8,7 +8,7 @@ function cssInjector(rule) {
     if (css.styleSheet) css.styleSheet.cssText = rule // Support for IE
     else css.appendChild(document.createTextNode(rule)) // Support for the rest
     document.getElementsByTagName("head")[0].appendChild(css)
-    }
+}
 
 // Load the rules and execute after the DOM loads
 let rule
@@ -74,8 +74,13 @@ if (dark_mode) {
     .unread {
         background-color: #575757!important; // lighter-gray
     }
+    /* increase video size */
     .mediaplugin > div {
-        max-width: 100%!important;
+        max-width: 75%!important;
+    }
+    .currentcourse {
+        background-color: #303030!important;
+
     }
     `
 } else {
@@ -105,22 +110,19 @@ function newTabs() {
     links.forEach(element => {
         element.target = "_blank"
     })
+    let main_pg = document.querySelectorAll('.title a')
+    main_pg.forEach(element => {
+        element.target = "_blank"
+    })
 }
 
 newTabs()
 
 function videoSpeed() {
-    document.querySelector('video').playbackRate = 2
+    // check if video exists
+    if (document.querySelector('video')) {
+        document.querySelector('video').playbackRate = 2
+    }
 }
 
 videoSpeed()
-
-// old
-
-/* 
-let all_a = document.querySelectorAll('a')
-
-all_a.forEach(element => {
-    element.style.color = '#4287f5'
-})
-*/

@@ -3,21 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Impoved eClass</title>
+    <title>Improved eClass</title>
     <style>
         body {
             margin-left: 15px;
             margin-right: 15px;
             margin-top: 15px;
-            min-width: 100px;
+            min-width: 175px;
             min-height: 100px;
         }
         button {
             background-color: green;
             color: white;
             padding: 15px 32px;
-            margin-left: 10px;
-            margin-top: 10px;
             font-size: 16px;
             border: none;
             border-radius: 5px;
@@ -25,14 +23,23 @@
         label {
             font-size: 2em;
         }
+        a {
+            margin-left: 10px;
+        }
     </style>
 </head>
 <body>
-    <label for="light"><input type="radio" id="light" name="theme">Light</label><br>
-    
-    <label for="dark"><input type="radio" id="dark" name="theme">Dark</label><br>
-    <small>Not working currently</small>
-    <a href="https://eclass.srv.ualberta.ca/my/" target="_blank"><button>Open eClass</button></a>
+    <h2>Theme</h2>
+    <label for="dark"><input type="radio" id="dark" name="theme" checked> Dark</label><br>
+    <label for="light"><input type="radio" id="light" name="theme" disabled> Light</label><br>
+    <small>Light version under construction 🔨 </small>
+    <hr>
+    <h2>Video Speed</h2>
+    <label for="x1"><input type="radio" id="x1" name="speed"> 1x</label><br>
+    <label for="x15"><input type="radio" id="x15" name="speed"> 1.5x</label><br>
+    <label for="x2"><input type="radio" id="x2" name="speed" checked> 2x</label><br>
+    <hr>
+    <a href="https://eclass.srv.ualberta.ca/my/" target="_blank"><button style="text-align: center;">Open eClass</button></a>
 </body>
 </html>
 
