@@ -1,7 +1,6 @@
 let dark_mode = true
 
 // from https://stackoverflow.com/questions/15505225/inject-css-stylesheet-as-string-using-javascript
-
 function cssInjector(rule) {
     let css = document.createElement('style');
     css.type = 'text/css'
@@ -103,7 +102,7 @@ if (dark_mode) {
 
 cssInjector(rule)
 
-// TODO: click -> target new tab
+// click -> target new tab
 
 function newTabs() {
     let links = document.querySelectorAll('.activityinstance a')
@@ -118,11 +117,32 @@ function newTabs() {
 
 newTabs()
 
-function videoSpeed() {
-    // check if video exists
+// vid speed
+chrome.storage.sync.get('vid_speed', function(result) {
+    let speed = result.vid_speed.vid_speed
+    if (speed == undefined) {
+        speed = 2
+    }
+    chrome.storage.sync.set({'vid_speed': speed})
+    console.log(speed)
+    change_speed(speed)
+})
+
+function change_speed(speed) {
     if (document.querySelector('video')) {
-        document.querySelector('video').playbackRate = 2
+        document.querySelector('video').playbackRate = speed
     }
 }
 
-videoSpeed()
+// event listener for option changes
+chrome.runtime.onMessage.addListener((msg, sender) => {
+    let speed = msg.speed
+
+    // changes current video
+    if (document.querySelector('video')) {
+        document.querySelector('video').playbackRate = msg.speed
+    }
+
+    // saves changes
+    chrome.storage.sync.set({'vid_speed': speed})
+})
