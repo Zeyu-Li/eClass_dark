@@ -22,6 +22,12 @@ The links in lighter green show what has not been clicked
 
 
 
+Extension options:
+
+![extension](images/extension.png)
+
+
+
 ## Installing
 
 To install this extension
