@@ -15,6 +15,32 @@ _2.addEventListener('click', event => {
     send_msg(2)
 })
 
+window.onload = function(e) {
+    // get speed setting from chrome storage
+    chrome.storage.sync.get('vid_speed', function(result) {
+        let speed
+        // console.log(result)
+        // let radio_speed = document.getElementById("_1")
+        if (Object.keys(result).length === 0 && result.constructor === Object) {
+            speed = 2
+            chrome.storage.sync.set({'vid_speed': speed})
+            // console.log(speed)
+            // set radio check
+            _2.checked = true
+        } else {
+            speed = result.vid_speed
+            // console.log(speed)
+            if (speed == 2) {
+                _2.checked = true
+            } else if (speed == 1) {
+                _1.checked = true
+            } else {
+                _15.checked = true
+            }
+        }
+})
+}
+
 function send_msg(vid_speed) {
     // chrome.tabs.sendMessage("1")
     chrome.tabs.query({
