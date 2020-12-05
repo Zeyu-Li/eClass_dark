@@ -40,7 +40,7 @@ To install this extension
 
 3. Go to Chrome extension page by going to chrome://extensions/ (as a URL address)
 
-4. Click Load unpacked and navigate to the unzipped folder
+4. Click Load unpacked and navigate to the unzipped folder (might require develop mode to be enabled)
 
 5. Confirm
 
