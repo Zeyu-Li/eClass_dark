@@ -32,7 +32,7 @@ Extension options:
 
 To install this extension
 
-1. clone this GitHub repo or download zip
+1. Clone this GitHub repo or download zip
 
    <img src="images/download.png" alt="download" style="zoom:50%;" />
 
@@ -48,8 +48,6 @@ To install this extension
 
 Now you have the extension installed!! 🤩
 
-
-
 ## License
 
 MIT
@@ -60,3 +58,4 @@ MIT
 
 If there are bugs, use the issues tab on GitHub (https://github.com/Zeyu-Li/eClass_dark/issues)
 
+This extension should work with other Oracle's PeopleSoft programs will a bit of finagling 
