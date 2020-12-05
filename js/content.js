@@ -18,8 +18,9 @@ if (dark_mode) {
     h1, h2, h3, h4, h5, p, li, .header-button-title, .anonforumnodiscuss, pre {
         color: #D6D8DA; // white-gray
     }
-    .breadcrumb-item, .mb-3, .no-overflow, .groupselector, .author, .author-info, .discussion span, table {
-        color: #D6D8DA!important; // white-gray
+    .breadcrumb-item, .mb-3, .no-overflow, .groupselector, .author, .author-info, 
+    .discussion span, table, .contentafterlink li span, .contentafterlink span, .forumnodiscuss {
+        color: #D6D8DA; // white-gray
     }
 
     body {
@@ -46,9 +47,6 @@ if (dark_mode) {
         color: #28e089;
         transition: .5s;
     }
-    .no-overflow span, .forumpost.unread .row.header {
-        background-color: rgba(255, 207, 53, .4)!important
-    }
     .breadcrumb .breadcrumb-item a:hover {
         color: #28e089;
         transition: .5s;
@@ -62,10 +60,9 @@ if (dark_mode) {
     }
     .node_category, .profile_tree section {
         background-color: #303030!important;
-
     }
-    .content li {
-        color: #284E36
+    .no-overflow span {
+        background-color: rgba(255, 207, 53, .135)!important
     }
     .popover-region-container, .notification {
         background-color: #303030; // light-gray
@@ -79,9 +76,32 @@ if (dark_mode) {
     }
     .currentcourse {
         background-color: #303030!important;
-
+    }
+    /* hovered tables */
+    .table-hover tbody tr:hover, table.grading-report tbody tr:hover, .forumheaderlist tbody tr:hover, 
+    .generaltable tbody tr:hover, table.flexible tbody tr:hover, .category_subcategories tbody tr:hover, 
+    table#modules tbody tr:hover, table#permissions tbody tr:hover  {
+        color: #e8e8e8!important;
+    }
+    .sectionhidden .section-title {
+        color: #284E36!important;
+        padding-left: 10px;
+    }
+    .outcome .feedback p {
+        color: #31708f!important;
+    }
+    .criteria tbody, .quizreviewsummary {
+        color: #000!important;
+        background-color: #fff;
+    }
+    .criteria tbody tr:hover, .criteria tbody td:hover, .quizreviewsummary tr:hover, .quizreviewsummary td:hover {
+        color: #333333!important;
+    }
+    .calendar_event_course {
+        background-color: rgba(255, 211, 189, .5);
     }
     `
+    // TODO: no horizontal scroll
 } else {
     // light mode
     rule = `
@@ -96,6 +116,9 @@ if (dark_mode) {
     a:hover {
         color: #28e089;
         transition: .5s;
+    }
+    .no-overflow span, .forumpost.unread .row.header {
+        background-color: rgba(255, 207, 53, .4)!important
     }
     `
 }
@@ -123,10 +146,10 @@ chrome.storage.sync.get('vid_speed', function(result) {
     if (Object.keys(result).length === 0 && result.constructor === Object) {
         speed = 2
         chrome.storage.sync.set({'vid_speed': speed})
-        console.log(speed)
+        // console.log(speed)
     } else {
         speed = result.vid_speed
-        console.log(speed)
+        // console.log(speed)
     }
     change_speed(speed)
 })
