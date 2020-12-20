@@ -15,7 +15,7 @@ let rule
 if (dark_mode) {
     // dark mode
     rule = `
-    h1, h2, h3, h4, h5, p, li, .header-button-title, .anonforumnodiscuss, pre {
+    h1, h2, h3, h4, h5, p, li, .header-button-title, .anonforumnodiscuss, pre, .generaltable {
         color: #D6D8DA; // white-gray
     }
     .breadcrumb-item, .mb-3, .no-overflow, .groupselector, .author, .author-info, 
