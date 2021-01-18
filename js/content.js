@@ -15,9 +15,10 @@ let rule
 if (dark_mode) {
     // dark mode
     rule = `
-    h1, h2, h3, h4, h5, p, li, .header-button-title, .anonforumnodiscuss, pre, .generaltable {
+    h1, h2, h3, h4, h5, h6, p, li, .header-button-title, .anonforumnodiscuss, pre, .generaltable {
         color: #D6D8DA; // white-gray
     }
+    
     .breadcrumb-item, .mb-3, .no-overflow, .groupselector, .author, .author-info, 
     .discussion span, table, .contentafterlink li span, .contentafterlink span, .forumnodiscuss {
         color: #D6D8DA; // white-gray
@@ -29,7 +30,7 @@ if (dark_mode) {
     .card {
         margin-bottom: 0px!important;
     }
-    #region-main, .card {
+    #region-main, .card, .list-group-item {
         background-color: #303030; // light-gray
     }
     .info {
