@@ -8,7 +8,7 @@ This Chrome extension will make eClass, a UofA class course website, thematicall
 * See what links have been visited
 * Bigger Videos
 
-
+Now available on Google chrome store: [chrome.google.com](https://chrome.google.com/webstore/detail/eclass-optimizations/dmnlhbobipheklaahbiopkhopglibcej)
 
 ## Preview
 
