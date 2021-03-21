@@ -4,6 +4,9 @@ let _1 = document.getElementById('x1')
 let _15 = document.getElementById('x15')
 let _2 = document.getElementById('x2')
 
+let dark_switch = document.getElementById('dark')
+let light_switch = document.getElementById('light')
+
 // send the right msg to content.js
 _1.addEventListener('click', event => {
     send_msg(1)
@@ -13,6 +16,13 @@ _15.addEventListener('click', event => {
 })
 _2.addEventListener('click', event => {
     send_msg(2)
+})
+
+dark_switch.addEventListener('click', event => {
+    send_mode(true)
+})
+light_switch.addEventListener('click', event => {
+    send_mode(false)
 })
 
 window.onload = function(e) {
@@ -38,7 +48,24 @@ window.onload = function(e) {
                 _15.checked = true
             }
         }
-})
+    })
+    // get mode (dark/light)
+    chrome.storage.sync.get('mode', function(result) {
+        let mode
+        // console.log(result)
+        if (Object.keys(result).length === 0 && result.constructor === Object) {
+            mode = true
+            chrome.storage.sync.set({'mode': mode})
+            dark_switch.checked = true
+        } else {
+            mode = result.mode
+            if (mode == true) {
+                dark_switch.checked = true
+            } else {
+                light_switch.checked = true
+            }
+        }
+    })
 }
 
 function send_msg(vid_speed) {
@@ -51,6 +78,19 @@ function send_msg(vid_speed) {
         chrome.tabs.sendMessage(
             tabs[0].id,
             {speed: vid_speed}
+        );
+    });
+}
+function send_mode(mode) {
+    // chrome.tabs.sendMessage("1")
+    chrome.tabs.query({
+        active: true,
+        currentWindow: true
+    }, tabs => {
+        // ...and send a request for the DOM info...
+        chrome.tabs.sendMessage(
+            tabs[0].id,
+            {mode: mode}
         );
     });
 }
