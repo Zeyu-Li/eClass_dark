@@ -1,7 +1,7 @@
 {
     "name": "eClass Optimizations",
     "author": "Andrew Li",
-    "version": "1.0",
+    "version": "1.1",
     "manifest_version": 2,
     "description": "Makes eClass more useable",
     "icons": {"128": "images/favicon.png"},
