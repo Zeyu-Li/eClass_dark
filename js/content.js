@@ -3,6 +3,9 @@ let dark_mode
 // Load the rules and execute after the DOM loads
 let rule
 
+const lightGrey = "#303030"
+const darkGrey = "#242424"
+
 function load() {
     if (dark_mode) {
         // dark mode
@@ -17,16 +20,16 @@ function load() {
         }
 
         body {
-            background-color: #242424!important; // dark-gray
+            background-color: ${darkGrey}!important; // dark-gray
         }
         .card {
             margin-bottom: 0px!important;
         }
         #region-main, .card, .list-group-item {
-            background-color: #303030; // light-gray
+            background-color: ${lightGrey}; // light-gray
         }
         .info {
-            background-color: #303030!important; // light-gray
+            background-color: ${lightGrey}!important; // light-gray
         }
         a {
             color: #0ec76f;
@@ -52,13 +55,13 @@ function load() {
             color: #D6D8DA!important;
         }
         .node_category, .profile_tree section {
-            background-color: #303030!important;
+            background-color: ${lightGrey}!important;
         }
         .no-overflow span {
-            background-color: rgba(255, 207, 53, .135)!important
+            background-color: rgba(255, 207, 53, .235)!important
         }
         .popover-region-container, .notification {
-            background-color: #303030; // light-gray
+            background-color: ${lightGrey}; // light-gray
         }
         .unread {
             background-color: #575757!important; // lighter-gray
@@ -68,7 +71,7 @@ function load() {
             max-width: 75%!important;
         }
         .currentcourse {
-            background-color: #303030!important;
+            background-color: ${lightGrey}!important;
         }
         /* hovered tables */
         .table-hover tbody tr:hover, table.grading-report tbody tr:hover, .forumheaderlist tbody tr:hover, 
@@ -92,6 +95,24 @@ function load() {
         }
         .calendar_event_course {
             background-color: rgba(255, 211, 189, .5);
+        }
+        #nav-drawer {
+            background-color: ${lightGrey}!important;
+        }
+        .content .d-flex, .content .prompt, .content input[type="radio"] {
+            color: #000;
+        }
+        .que .formulation {
+            background-color: #f5feff;
+        }
+        .table-hover tbody tr:hover, table.grading-report tbody tr:hover, .forumheaderlist tbody tr:hover, .generaltable tbody tr:hover, table.flexible tbody tr:hover, .category_subcategories tbody tr:hover, table#modules tbody tr:hover, table#permissions tbody tr:hover {
+            color: #262626!important;
+        }
+        .breadcrumb .breadcrumb-item {
+            color: #fff;
+        }
+        .breadcrumb-item, .mb-3, .no-overflow, .groupselector, .author, .author-info, .discussion span, table, .contentafterlink li span, .contentafterlink span, .forumnodiscuss {
+            color: #000;
         }
         `
         // TODO: no horizontal scroll
