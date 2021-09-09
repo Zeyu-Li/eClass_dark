@@ -108,7 +108,7 @@ function load() {
         .table-hover tbody tr:hover, table.grading-report tbody tr:hover, .forumheaderlist tbody tr:hover, .generaltable tbody tr:hover, table.flexible tbody tr:hover, .category_subcategories tbody tr:hover, table#modules tbody tr:hover, table#permissions tbody tr:hover {
             color: #262626!important;
         }
-        .breadcrumb-item, .mb-3, .no-overflow, .groupselector, .author, .author-info, .discussion span, table, .contentafterlink li span, .contentafterlink span, .forumnodiscuss {
+        .breadcrumb-item, .mb-3, .no-overflow, .groupselector, .author, .author-info, .discussion span, .contentafterlink li span, .contentafterlink span, .forumnodiscuss {
             color: #fff;
         }
         `
